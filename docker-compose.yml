@@ -25,7 +25,7 @@ services:
 
 
   keycloak:
-    image: protegeproject/webprotege-keycloak:1.0.0
+    image: keycloak/keycloak:26.1
     command: [ "start-dev" ]
     ports:
       - 8080:8080
@@ -420,14 +420,6 @@ services:
     build: ./esh_explorer
     ports:
       - 8887:8887
-    networks:
-      - elk
-
-  mailpit:
-    image: axllent/mailpit
-    ports:
-      - 8025:8025
-      - 1025:1025
     networks:
       - elk
 
