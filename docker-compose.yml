@@ -298,6 +298,8 @@ services:
   webprotege-nginx:
     image: protegeproject/webprotege-nginx:2.0.2
     hostname: ${SERVER_HOST}
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
     ports:
       - 80:80
     depends_on:
